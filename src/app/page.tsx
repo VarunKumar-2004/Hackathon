@@ -1,15 +1,17 @@
-import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Pricing from "@/components/Pricing";
-import Footer from "@/components/Footer";
+import Sponsors from "@/components/Sponsors";
+import About from "@/components/About";
+import Tracks from "@/components/Tracks";
+import FAQ from "@/components/FAQ";
 
 export default function Home() {
-  return (
-    <main className="min-h-screen bg-[#020617] text-white selection:bg-purple-500/30">
-      <Navbar />
-      <Hero />
-      <Pricing />
-      <Footer />
-    </main>
-  );
+    return (
+        <>
+            <Hero />
+            <Sponsors />
+            <About />
+            <Tracks />
+            <FAQ />
+        </>
+    );
 }

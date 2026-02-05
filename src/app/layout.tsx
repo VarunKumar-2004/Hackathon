@@ -1,34 +1,32 @@
+import React from "react";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Outfit, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"] });
+const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space" });
 
 export const metadata: Metadata = {
-  title: "JNTUGV Hackathon 2026",
-  description: "Join the biggest hackathon at JNTU-GV. Code the Impossible.",
+    title: "PyTech Arena 2026",
+    description: "Code. Compute. Create. Join the biggest hackathon at JNTU-GV Department of IT.",
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en">
+            <body className={`${inter.className} ${outfit.variable} ${spaceGrotesk.variable} min-h-screen bg-[#020617] text-white selection:bg-purple-500/30`}>
+                <Navbar />
+                {children}
+                <Footer />
+            </body>
+        </html>
+    );
 }
