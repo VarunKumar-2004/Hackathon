@@ -26,23 +26,23 @@ export default function Sponsors() {
                     <p className="inline-block px-4 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-[10px] font-mono uppercase tracking-[0.4em] mb-4 font-black shadow-[0_0_20px_rgba(168,85,247,0.1)]">
                         Collaborators
                     </p>
-                    <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">
+                    <h2 className="text-xl md:text-2xl lg:text-3xl font-black text-white uppercase tracking-tight">
                         Official <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Partners & Clubs</span>
                     </h2>
                 </div>
 
                 {/* Enhanced Gradient Masks for perfect blending */}
-                <div className="absolute left-0 top-0 bottom-0 w-40 md:w-64 bg-gradient-to-r from-[#02040a] via-[#02040a]/90 to-transparent z-20 pointer-events-none" />
-                <div className="absolute right-0 top-0 bottom-0 w-40 md:w-64 bg-gradient-to-l from-[#02040a] via-[#02040a]/90 to-transparent z-20 pointer-events-none" />
+                <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-r from-[#02040a] via-[#02040a]/90 to-transparent z-20 pointer-events-none" />
+                <div className="absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-l from-[#02040a] via-[#02040a]/90 to-transparent z-20 pointer-events-none" />
 
-                <div className="flex overflow-hidden py-8">
+                <div className="flex overflow-hidden py-8 md:py-12">
                     <motion.div
-                        className="flex items-center gap-10 md:gap-20"
+                        className="flex items-center gap-8 md:gap-12"
                         animate={{
-                            x: [0, -180 * sponsors.length - 20 * sponsors.length] // Calculated shift
+                            x: [0, -((140 + 32) * sponsors.length)] // Shift calculation: (width + gap) * count
                         }}
                         transition={{
-                            duration: 30, // Faster, more noticeable speed
+                            duration: 25,
                             ease: "linear",
                             repeat: Infinity
                         }}
@@ -51,23 +51,23 @@ export default function Sponsors() {
                         {doubleSponsors.map((sponsor, index) => (
                             <div
                                 key={index}
-                                className="h-20 md:h-28 w-[150px] md:w-[200px] shrink-0 transition-all duration-500 cursor-pointer p-5 bg-white/[0.02] hover:bg-white/[0.08] rounded-3xl border border-white/5 hover:border-purple-500/40 flex items-center justify-center group/logo relative"
+                                className="h-24 w-24 sm:h-28 sm:w-28 md:h-32 md:w-32 lg:h-[140px] lg:w-[140px] shrink-0 transition-all duration-500 cursor-pointer bg-white/[0.03] hover:bg-white/[0.1] rounded-full border border-white/10 hover:border-purple-500/50 flex items-center justify-center group/logo relative shadow-[0_0_15px_rgba(0,0,0,0.3)] overflow-hidden"
                             >
                                 {/* Inner Shadow for depth */}
-                                <div className="absolute inset-0 rounded-3xl shadow-[inset_0_0_20px_rgba(255,255,255,0.02)]" />
+                                <div className="absolute inset-0 rounded-full shadow-[inset_0_0_15px_rgba(255,255,255,0.05)] z-20 pointer-events-none" />
 
                                 <img
                                     src={sponsor.logo}
                                     alt={sponsor.name}
-                                    className="h-full w-full object-contain filter brightness-125 contrast-110 drop-shadow-[0_0_8px_rgba(168,85,247,0.1)] group-hover:scale-110 transition-transform duration-500"
+                                    className="h-full w-full object-cover filter brightness-110 contrast-125 drop-shadow-[0_0_12px_rgba(168,85,247,0.2)] group-hover:scale-110 transition-transform duration-500 z-10"
                                     onError={(e) => {
                                         const target = e.target as HTMLImageElement;
                                         target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(sponsor.name)}&background=1a1a2e&color=7c3aed&bold=true&size=256&font-size=0.35&rounded=true`;
                                     }}
                                 />
 
-                                <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 opacity-0 group-hover/logo:opacity-100 group-hover/logo:-bottom-4 transition-all duration-300 pointer-events-none z-30">
-                                    <span className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-[9px] px-3 py-1 rounded-full whitespace-nowrap font-mono font-bold border border-white/20 shadow-xl">
+                                <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 opacity-0 group-hover/logo:opacity-100 group-hover/logo:-bottom-6 transition-all duration-300 pointer-events-none z-30 hidden sm:block">
+                                    <span className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-[10px] px-3 py-1.5 rounded-full whitespace-nowrap font-mono font-bold border border-white/20 shadow-2xl">
                                         {sponsor.name}
                                     </span>
                                 </div>

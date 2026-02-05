@@ -40,7 +40,7 @@ export default function BeginnerRegistration() {
                                     </h3>
                                 </div>
 
-                                <h1 className="text-4xl md:text-6xl font-black text-white leading-tight uppercase tracking-tighter">
+                                <h1 className="text-3xl md:text-6xl font-black text-white leading-tight uppercase tracking-tighter">
                                     PyTech <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">Arena 2026</span>
                                 </h1>
 

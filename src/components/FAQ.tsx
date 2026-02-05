@@ -26,14 +26,14 @@ export default function FAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     return (
-        <section id="faq" className="py-24 bg-black/40 relative">
+        <section id="faq" className="py-20 md:py-24 bg-black/40 relative">
             <div className="container mx-auto px-6 max-w-4xl">
-                <div className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-yellow-500 text-xs font-mono mb-4">
+                <div className="text-center mb-12 md:mb-16">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-yellow-500 text-[10px] md:text-xs font-mono mb-4">
                         <HelpCircle size={14} />
                         <span>KNOWLEDGE_BASE</span>
                     </div>
-                    <h2 className="text-4xl font-black text-white uppercase tracking-tight">Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">Queries</span></h2>
+                    <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">Queries</span></h2>
                 </div>
 
                 <div className="space-y-4">
@@ -44,14 +44,14 @@ export default function FAQ() {
                         >
                             <button
                                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                                className="w-full flex items-center justify-between p-6 text-left hover:bg-white/[0.04] transition-colors"
+                                className="w-full flex items-center justify-between p-5 md:p-6 text-left hover:bg-white/[0.04] transition-colors"
                             >
-                                <span className="text-lg font-bold text-gray-200">{faq.question}</span>
-                                <div className="flex-shrink-0 ml-4">
+                                <span className="text-base md:text-lg font-bold text-gray-200 pr-4">{faq.question}</span>
+                                <div className="flex-shrink-0">
                                     {openIndex === index ? (
-                                        <Minus className="w-5 h-5 text-yellow-500" />
+                                        <Minus className="w-4 h-4 md:w-5 md:h-5 text-yellow-500" />
                                     ) : (
-                                        <Plus className="w-5 h-5 text-gray-500" />
+                                        <Plus className="w-4 h-4 md:w-5 md:h-5 text-gray-500" />
                                     )}
                                 </div>
                             </button>
@@ -64,7 +64,7 @@ export default function FAQ() {
                                         exit={{ height: 0, opacity: 0 }}
                                         transition={{ duration: 0.3, ease: "easeInOut" }}
                                     >
-                                        <div className="p-6 pt-0 text-gray-400 font-mono text-sm leading-relaxed border-t border-white/5 mt-0">
+                                        <div className="p-5 md:p-6 pt-0 text-gray-400 font-mono text-xs md:text-sm leading-relaxed border-t border-white/5 mt-0">
                                             <span className="text-yellow-500 mr-2">&gt;</span>
                                             {faq.answer}
                                         </div>

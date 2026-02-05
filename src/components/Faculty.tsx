@@ -91,30 +91,30 @@ export default function Faculty() {
             <div className="absolute inset-0 bg-[linear-gradient(rgba(124,58,237,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(124,58,237,0.05)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)]" />
 
             <div className="container mx-auto px-6 relative z-10">
-                <div className="text-center mb-16">
+                <div className="text-center mb-12 md:mb-16">
                     <motion.div
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-mono mb-4"
+                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-[10px] md:text-xs font-mono mb-4"
                     >
                         <Terminal size={12} />
                         <span>FACULTY_DIRECTORY_V2.0</span>
                     </motion.div>
 
-                    <h2 className="text-lg md:text-xl lg:text-3xl font-black mb-4 tracking-tight text-white uppercase">
+                    <h2 className="text-2xl md:text-3xl font-black mb-4 tracking-tight text-white uppercase">
                         Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Chairperson</span>
                     </h2>
                 </div>
 
                 {/* Chairperson Section */}
-                <div className="flex justify-center mb-16">
-                    <div className="w-72 shrink-0">
+                <div className="flex justify-center mb-16 px-4">
+                    <div className="w-full max-w-[280px] sm:w-72">
                         <FacultyCard member={chairperson} isChairperson />
                     </div>
                 </div>
 
-                <div className="text-center mb-10">
-                    <h2 className="text-lg md:text-xl lg:text-3xl font-black mb-4 tracking-tight text-white uppercase">
+                <div className="text-center mb-8 md:mb-10">
+                    <h2 className="text-2xl md:text-3xl font-black mb-4 tracking-tight text-white uppercase">
                         Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">Faculty</span>
                     </h2>
                 </div>
@@ -122,7 +122,7 @@ export default function Faculty() {
                 <div className="relative w-full overflow-hidden pb-12">
                     {/* Infinite Scroll Container */}
                     <motion.div
-                        className="flex gap-6 w-max"
+                        className="flex gap-4 md:gap-6 w-max"
                         animate={{
                             x: ["0%", "-33.33%"],
                         }}
@@ -134,20 +134,20 @@ export default function Faculty() {
                     >
                         {/* 3 identical sets of faculty to create a seamless infinite loop */}
                         {[...facultyMembers, ...facultyMembers, ...facultyMembers].map((member, index) => (
-                            <div key={index} className="w-56 shrink-0">
+                            <div key={index} className="w-48 md:w-56 shrink-0">
                                 <FacultyCard member={member} />
                             </div>
                         ))}
                     </motion.div>
 
                     {/* Gradient Overlays for smooth entry/exit */}
-                    <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#030712] to-transparent z-10 pointer-events-none" />
-                    <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#030712] to-transparent z-10 pointer-events-none" />
+                    <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-[#030712] to-transparent z-10 pointer-events-none" />
+                    <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-[#030712] to-transparent z-10 pointer-events-none" />
                 </div>
 
                 {/* Supporting Staff Section */}
-                <div className="text-center mb-10 mt-12">
-                    <h2 className="text-lg md:text-xl lg:text-3xl font-black mb-4 tracking-tight text-white uppercase">
+                <div className="text-center mb-8 md:mb-10 mt-12">
+                    <h2 className="text-2xl md:text-3xl font-black mb-4 tracking-tight text-white uppercase">
                         Supporting <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">Staff</span>
                     </h2>
                 </div>
@@ -155,7 +155,7 @@ export default function Faculty() {
                 <div className="relative w-full overflow-hidden pb-12">
                     {/* Infinite Scroll Container */}
                     <motion.div
-                        className="flex gap-6 w-max"
+                        className="flex gap-4 md:gap-6 w-max"
                         animate={{
                             x: ["0%", "-33.33%"],
                         }}
@@ -167,15 +167,15 @@ export default function Faculty() {
                     >
                         {/* 3 identical sets of staff to create a seamless infinite loop */}
                         {[...supportingStaff, ...supportingStaff, ...supportingStaff].map((staff, index) => (
-                            <div key={index} className="w-56 shrink-0">
+                            <div key={index} className="w-48 md:w-56 shrink-0">
                                 <FacultyCard member={staff} isStaff />
                             </div>
                         ))}
                     </motion.div>
 
                     {/* Gradient Overlays for smooth entry/exit */}
-                    <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#030712] to-transparent z-10 pointer-events-none" />
-                    <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#030712] to-transparent z-10 pointer-events-none" />
+                    <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-[#030712] to-transparent z-10 pointer-events-none" />
+                    <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-[#030712] to-transparent z-10 pointer-events-none" />
                 </div>
             </div>
         </section>
