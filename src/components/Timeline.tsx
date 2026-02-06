@@ -89,7 +89,7 @@ export default function Timeline() {
                         <Clock size={14} className="animate-pulse" />
                         <span>EVENT_SCHEDULE_V1.0</span>
                     </motion.div>
-                    <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tight mb-4">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white uppercase tracking-tight mb-4">
                         Road To <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Victory</span>
                     </h2>
                     <p className="text-gray-400 max-w-2xl mx-auto font-mono text-sm">

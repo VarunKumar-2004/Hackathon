@@ -26,7 +26,7 @@ const facultyMembers = [
         name: "Mrs.Roje Spandana Rajeti",
         role: "Assistant Professor (c)",
         email: "rojespandanar.it@jntugvcev.edu.in",
-        image: "/faculty/roje_spandana.png"
+        image: "/faculty/roje_mam.png"
     },
     {
         name: "Dr. Kolli Srikanth",

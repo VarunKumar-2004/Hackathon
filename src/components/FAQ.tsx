@@ -33,7 +33,7 @@ export default function FAQ() {
                         <HelpCircle size={14} />
                         <span>KNOWLEDGE_BASE</span>
                     </div>
-                    <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">Queries</span></h2>
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white uppercase tracking-tight">Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">Queries</span></h2>
                 </div>
 
                 <div className="space-y-4">
