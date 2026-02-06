@@ -54,7 +54,7 @@ export default function About() {
                         </h2>
 
                         <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-8 font-mono">
-                            JNTUGV HACKS 2026 isn't just a competition; it's a launchpad for the next generation of architects. Hosted by the Department of IT, we provide the infrastructure for your creativity to thrive.
+                            PyTech Arena 2026 isn't just a competition; it's a launchpad for the next generation of architects. Hosted by the Department of IT of JNTU-GV , we provide the infrastructure for your creativity to thrive.
                         </p>
 
                         <div className="grid sm:grid-cols-2 gap-4 md:gap-6">

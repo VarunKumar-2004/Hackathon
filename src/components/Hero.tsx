@@ -27,18 +27,25 @@ export default function Hero() {
     return (
         <section id="home" className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden bg-[#02040a]">
             {/* Logos at the top ends */}
-            <div className="absolute top-4 md:top-8 left-0 right-0 px-4 md:px-12 flex justify-between items-start pointer-events-none z-[60]">
+            <div className="absolute top-24 md:top-8 md:-left-14 md:-right-14 left-0 right-0 px-[var(--page-margin)] flex justify-between items-start pointer-events-none z-[60]">
                 <motion.div
                     initial={{ x: -100, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.5 }}
                     className="flex flex-col items-center gap-2 pointer-events-auto"
                 >
-                    <img
-                        src="/partners/jntugv.png"
-                        alt="JNTUGV Logo"
-                        className="w-10 h-auto md:w-16 lg:w-22 filter drop-shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all duration-500"
-                    />
+                    <a
+                        href="https://jntugvcev.edu.in/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="relative z-10 block p-3 transition-transform hover:scale-110 active:scale-95 cursor-pointer"
+                    >
+                        <img
+                            src="/partners/jntugv.png"
+                            alt="JNTUGV Logo"
+                            className="w-13 h-auto md:w-16 lg:w-22 filter drop-shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all duration-500"
+                        />
+                    </a>
                 </motion.div>
 
                 <motion.div
@@ -51,12 +58,12 @@ export default function Hero() {
                         href="https://jntukucev.hosting2.acm.org/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="relative z-10 block transition-transform hover:scale-110 active:scale-95 cursor-pointer"
+                        className="relative z-10 block p-3 transition-transform hover:scale-110 active:scale-95 cursor-pointer"
                     >
                         <img
                             src="/partners/acm.png"
                             alt="ACM Logo"
-                            className="w-10 h-auto md:w-16 lg:w-22 filter drop-shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all duration-500 brightness-125 pointer-events-none"
+                            className="w-13 h-auto md:w-16 lg:w-22 filter drop-shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all duration-500 brightness-125"
                         />
                     </a>
                 </motion.div>
@@ -136,7 +143,7 @@ export default function Hero() {
                             </span>
                         </Link>
 
-                        <a href="/#about" className="px-6 md:px-8 py-3.5 md:py-4 border border-white/10 rounded-xl font-bold text-gray-300 hover:bg-white/5 hover:border-white/20 transition-all backdrop-blur-sm block text-sm md:text-base">
+                        <a href="/#timeline" className="px-6 md:px-8 py-3.5 md:py-4 border border-white/10 rounded-xl font-bold text-gray-300 hover:bg-white/5 hover:border-white/20 transition-all backdrop-blur-sm block text-sm md:text-base">
                             Learn More
                         </a>
                     </div>

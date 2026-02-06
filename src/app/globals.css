@@ -2,7 +2,14 @@
 @import "tailwindcss";
 
 html {
+  box-sizing: border-box;
   scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 :root {
@@ -11,7 +18,23 @@ html {
   --primary: #7c3aed;
   --primary-glow: rgba(124, 58, 237, 0.5);
   --accent: #22d3ee;
+  --page-margin: 0.5rem;
 }
+
+@media (min-width: 1024px) {
+  :root {
+    --page-margin: 4rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  :root {
+    --page-margin: 6rem;
+  }
+}
+
+
+
 
 .kaushan-script-regular {
   font-family: "Kaushan Script", cursive;
@@ -44,7 +67,11 @@ html {
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
+
 body {
+  margin: 0;
+  padding-left: var(--page-margin);
+  padding-right: var(--page-margin);
   background-color: #030712;
   color: var(--foreground);
   font-family: var(--font-sans), sans-serif;
@@ -60,6 +87,8 @@ body {
   background-size: 40px 40px;
   background-position: center 0;
 }
+
+
 
 /* Vignette mask for the grid */
 body::after {

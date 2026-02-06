@@ -21,7 +21,7 @@ const doubleSponsors = [...sponsors, ...sponsors];
 export default function Sponsors() {
     return (
         <section className="py-24 border-y border-white/5 bg-[#02040a] overflow-hidden relative group">
-            <div className="container mx-auto px-6 relative z-10">
+            <div className="max-w-[1600px] mx-auto px-2 relative z-10">
                 <div className="flex flex-col items-center mb-16">
                     <p className="inline-block px-4 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-[10px] font-mono uppercase tracking-[0.4em] mb-4 font-black shadow-[0_0_20px_rgba(168,85,247,0.1)]">
                         Collaborators
@@ -32,8 +32,6 @@ export default function Sponsors() {
                 </div>
 
                 {/* Enhanced Gradient Masks for perfect blending */}
-                <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-r from-[#02040a] via-[#02040a]/90 to-transparent z-20 pointer-events-none" />
-                <div className="absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-l from-[#02040a] via-[#02040a]/90 to-transparent z-20 pointer-events-none" />
 
                 <div className="flex overflow-hidden py-8 md:py-12">
                     <motion.div
@@ -51,15 +49,15 @@ export default function Sponsors() {
                         {doubleSponsors.map((sponsor, index) => (
                             <div
                                 key={index}
-                                className="h-24 w-24 sm:h-28 sm:w-28 md:h-32 md:w-32 lg:h-[140px] lg:w-[140px] shrink-0 transition-all duration-500 cursor-pointer bg-white/[0.03] hover:bg-white/[0.1] rounded-full border border-white/10 hover:border-purple-500/50 flex items-center justify-center group/logo relative shadow-[0_0_15px_rgba(0,0,0,0.3)] overflow-hidden"
+                                className="h-24 w-24 sm:h-28 sm:w-28 md:h-32 md:w-32 lg:h-[140px] lg:w-[140px] shrink-0 transition-all duration-500 cursor-pointer bg-white rounded-full border border-white/10 hover:border-purple-500/50 flex items-center justify-center group/logo relative shadow-[0_0_15px_rgba(0,0,0,0.3)] overflow-hidden p-4"
                             >
                                 {/* Inner Shadow for depth */}
-                                <div className="absolute inset-0 rounded-full shadow-[inset_0_0_15px_rgba(255,255,255,0.05)] z-20 pointer-events-none" />
+                                <div className="absolute inset-0 rounded-full shadow-[inset_0_0_15px_rgba(0,0,0,0.1)] z-20 pointer-events-none" />
 
                                 <img
                                     src={sponsor.logo}
                                     alt={sponsor.name}
-                                    className="h-full w-full object-cover filter brightness-110 contrast-125 drop-shadow-[0_0_12px_rgba(168,85,247,0.2)] group-hover:scale-110 transition-transform duration-500 z-10"
+                                    className="h-full w-full object-contain filter brightness-110 group-hover:scale-110 transition-transform duration-500 z-10"
                                     onError={(e) => {
                                         const target = e.target as HTMLImageElement;
                                         target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(sponsor.name)}&background=1a1a2e&color=7c3aed&bold=true&size=256&font-size=0.35&rounded=true`;

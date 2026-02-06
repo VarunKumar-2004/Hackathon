@@ -17,7 +17,7 @@ import {
 export default function BeginnerRegistration() {
     return (
         <main className="min-h-screen bg-[#030712] text-white selection:bg-purple-500/30 pb-20 pt-32">
-            <div className="container mx-auto px-6">
+            <div className="max-w-[1400px] mx-auto px-1 md:px-2">
                 <div className="grid lg:grid-cols-3 gap-8">
                     {/* Main Banner Area */}
                     <div className="lg:col-span-2 space-y-8">

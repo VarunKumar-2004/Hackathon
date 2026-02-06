@@ -20,7 +20,7 @@ export default function Navbar() {
 
     return (
         <>
-            <div className="fixed top-6 md:top-10 left-0 right-0 z-50 flex items-center px-4 md:px-8 pointer-events-none">
+            <div className="fixed top-6 md:top-10 left-0 right-0 z-50 flex items-center px-[var(--page-margin)] pointer-events-none">
                 {/* Navbar Container */}
                 <div className="flex-1 flex justify-center pointer-events-auto">
                     <motion.div
@@ -54,7 +54,7 @@ export default function Navbar() {
 
                         {!isFacultyPage && (
                             <div className="hidden md:flex items-center gap-4">
-                                <Link href="/#tracks" className="bg-white text-black px-4 lg:px-6 py-2 md:py-2.5 rounded-full font-semibold hover:scale-105 transition-transform text-xs lg:text-sm shadow-[0_0_20px_rgba(255,255,255,0.3)] block">
+                                <Link href="/#tracks" className="bg-white text-black px-3 md:px-4 lg:px-6 py-2 md:py-2.5 rounded-full font-semibold hover:scale-105 transition-transform text-xs  lg:text-sm shadow-[0_0_20px_rgba(255,255,255,0.3)] block">
                                     Register Now
                                 </Link>
                             </div>

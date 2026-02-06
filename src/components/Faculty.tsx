@@ -88,7 +88,7 @@ export default function Faculty() {
     return (
         <section id="faculty" className="py-24 relative overflow-hidden bg-[#030712]">
             {/* Decorative Grid BG */}
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(124,58,237,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(124,58,237,0.05)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(124,58,237,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(124,58,237,0.05)_1px,transparent_1px)] bg-[size:50px_50px]" />
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-12 md:mb-16">
@@ -140,9 +140,6 @@ export default function Faculty() {
                         ))}
                     </motion.div>
 
-                    {/* Gradient Overlays for smooth entry/exit */}
-                    <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-[#030712] to-transparent z-10 pointer-events-none" />
-                    <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-[#030712] to-transparent z-10 pointer-events-none" />
                 </div>
 
                 {/* Supporting Staff Section */}
@@ -173,9 +170,6 @@ export default function Faculty() {
                         ))}
                     </motion.div>
 
-                    {/* Gradient Overlays for smooth entry/exit */}
-                    <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-[#030712] to-transparent z-10 pointer-events-none" />
-                    <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-[#030712] to-transparent z-10 pointer-events-none" />
                 </div>
             </div>
         </section>
@@ -223,7 +217,6 @@ function FacultyCard({ member, isChairperson, isStaff }: { member: any; isChairp
                         target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=random&color=fff&bold=true&size=256`;
                     }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-transparent to-transparent opacity-40" />
             </div>
 
             {/* Content section - highly compact */}

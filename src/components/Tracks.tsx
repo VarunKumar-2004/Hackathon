@@ -85,7 +85,7 @@ export default function Tracks() {
                     viewport={{ once: true }}
                     className="text-center mb-20"
                 >
-                    <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black mb-6 tracking-tight text-white uppercase">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-black mb-6 tracking-tight text-white uppercase">
                         Begin Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">Journey</span>
                     </h2>
                     <p className="text-gray-400 max-w-2xl mx-auto text-md sm:text-lg font-mono">
