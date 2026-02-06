@@ -147,7 +147,7 @@ export default function Tracks() {
 
                             {/* Rewards Area - HIGHLIGHTED */}
                             <div className={`px-6 md:px-8 py-4 md:py-5 border-t border-white/5 ${track.isAdvanced ? 'bg-purple-500/10' : 'bg-white/[0.02]'}`}>
-                                <h4 className="text-[9px] md:text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
+                                <h4 className="text-[9px] md:text-[10px] font-bold text-gray-300 uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
                                     {track.isAdvanced ? <Sparkles size={12} className="text-yellow-400" /> : null}
                                     {track.isAdvanced ? "Grand Prize Pool" : "Participation Rewards"}
                                 </h4>
@@ -169,7 +169,7 @@ export default function Tracks() {
 
                             {/* Skills Area */}
                             <div className="px-6 md:px-8 py-5 md:py-6 border-t border-white/5 bg-black/20 flex-grow">
-                                <h4 className="text-[9px] md:text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] mb-4 flex items-center gap-2">
+                                <h4 className="text-[9px] md:text-[10px] font-bold text-gray-300 uppercase tracking-[0.2em] mb-4 flex items-center gap-2">
                                     <Code2 className="w-3 h-3 text-cyan-500" /> Technology Stack
                                 </h4>
                                 <div className="flex flex-wrap gap-1.5 md:gap-2">

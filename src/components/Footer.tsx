@@ -3,7 +3,7 @@ import { Instagram, Twitter, Linkedin, Mail, MapPin, Terminal } from 'lucide-rea
 
 export default function Footer() {
     return (
-        <footer id="contact" className="border-t border-white/5 bg-[#030712] pt-16 pb-8 relative overflow-hidden">
+        <footer id="contact" className="border-t border-white/5 bg-[#020617] pt-16 pb-8 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-30" />
 
             <div className="container mx-auto px-6 relative z-10">

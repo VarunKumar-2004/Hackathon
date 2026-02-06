@@ -16,7 +16,7 @@ import {
 
 export default function BeginnerRegistration() {
     return (
-        <main className="min-h-screen bg-[#030712] text-white selection:bg-purple-500/30 pb-20 pt-32">
+        <main className="min-h-screen bg-[#020617] text-white selection:bg-purple-500/30 pb-20 pt-32">
             <div className="max-w-[1400px] mx-auto px-1 md:px-2">
                 <div className="grid lg:grid-cols-3 gap-8">
                     {/* Main Banner Area */}
@@ -24,46 +24,13 @@ export default function BeginnerRegistration() {
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-purple-900/40 via-gray-900/60 to-black p-8 md:p-12 shadow-2xl"
+                            className="relative overflow-hidden rounded-3xl border border-white/10 shadow-2xl"
                         >
-                            {/* Decorative Elements */}
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-purple-600/10 blur-[100px] -z-10" />
-                            <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-600/10 blur-[100px] -z-10" />
-
-                            <div className="text-center md:text-left space-y-6">
-                                <div className="space-y-2">
-                                    <h2 className="text-lg md:text-xl font-bold tracking-wider text-gray-300 uppercase">
-                                        JNTU-GV College of Engineering Vizianagaram (A)
-                                    </h2>
-                                    <h3 className="text-md md:text-lg font-semibold text-purple-400 uppercase tracking-widest">
-                                        Department of Information Technology
-                                    </h3>
-                                </div>
-
-                                <h1 className="text-3xl md:text-6xl font-black text-white leading-tight uppercase tracking-tighter">
-                                    PyTech <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">Arena 2026</span>
-                                </h1>
-
-                                <div className="space-y-4">
-                                    <div className="inline-block px-4 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-gray-400">
-                                        LEVEL_01 // FOUNDATIONS_TRACK
-                                    </div>
-                                    <h2 className="text-2xl md:text-4xl font-bold text-white">
-                                        Python Foundations & <br /> Logical Thinking
-                                    </h2>
-                                </div>
-
-                                <div className="flex flex-wrap gap-6 pt-4 text-sm font-mono text-gray-400">
-                                    <div className="flex items-center gap-2">
-                                        <Calendar className="w-4 h-4 text-purple-500" />
-                                        <span>FEB 27-28, 2026</span>
-                                    </div>
-                                    <div className="flex items-center gap-2">
-                                        <Clock className="w-4 h-4 text-purple-500" />
-                                        <span>AB-2, JNTUGV-CEV</span>
-                                    </div>
-                                </div>
-                            </div>
+                            <img
+                                src="/posters/beginner.jpeg"
+                                alt="Beginner Track - Python Foundations & Logical Thinking"
+                                className="w-full h-full object-cover"
+                            />
                         </motion.div>
 
                         {/* Detailed Description */}
@@ -138,15 +105,14 @@ export default function BeginnerRegistration() {
                         >
                             <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wider">Track Details</h3>
                             <div className="space-y-6">
-                                <DetailItem icon={<Calendar />} label="Date" value="Feb 27 and 28" />
-                                <DetailItem icon={<Clock />} label="Duration" value="2 Full Days" />
+                                <DetailItem icon={<Calendar />} label="Date" value="13th Feb to 17th Feb 2026" />
                                 <DetailItem icon={<Clock />} label="Time" value="9 AM to 4 PM" />
                                 <DetailItem icon={<CircleDollarSign />} label="Registration Fee" value="₹50 / Member" />
                             </div>
 
                             <div className="mt-8 p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-xl flex gap-3">
                                 <Info className="w-5 h-5 text-yellow-500 shrink-0" />
-                                <p className="text-[10px] text-yellow-500/80 leading-tight">
+                                <p className="text-[11px] md:text-[13px] text-yellow-500/80 leading-tight">
                                     Before registering this track, ensure your batch details (min 2 members) are finalized.
                                 </p>
                             </div>
@@ -163,7 +129,7 @@ export default function BeginnerRegistration() {
 
                             <div className="relative aspect-square max-w-[200px] mx-auto mb-6 bg-white p-4 rounded-2xl group cursor-pointer transition-transform hover:scale-105">
                                 <img
-                                    src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://forms.gle/your-beginner-form"
+                                    src="/formQr/beginnerQr.jpeg"
                                     alt="Registration QR"
                                     className="w-full h-full object-contain"
                                 />
@@ -173,7 +139,7 @@ export default function BeginnerRegistration() {
                             </div>
 
                             <a
-                                href="https://forms.gle/your-beginner-form"
+                                href="https://docs.google.com/forms/d/e/1FAIpQLSeT7DKUjlryiGvv0YKPtnDSWMrQH8QjTnH0E8PWG5NAlAFUuw/viewform"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="block w-full py-4 bg-purple-600 hover:bg-purple-700 text-white rounded-xl font-bold transition-all shadow-lg shadow-purple-900/40"

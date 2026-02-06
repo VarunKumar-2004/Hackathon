@@ -20,7 +20,7 @@ const facultyMembers = [
         name: "Mr. W. Anil",
         role: "Assistant Professor",
         email: "anilwurity.it@jntugvcev.edu.in",
-        image: "/faculty/anil.png"
+        image: "/faculty/anil.jpeg"
     },
     {
         name: "Mrs.Roje Spandana Rajeti",
@@ -32,13 +32,13 @@ const facultyMembers = [
         name: "Dr. Kolli Srikanth",
         role: "Assistant Professor (c)",
         email: "srikanth.it@jntugvcev.edu.in",
-        image: "/faculty/srikanth.png"
+        image: "/faculty/srikanth.jpeg"
     },
     {
         name: "Mrs. Madhumita Chanda",
         role: "Assistant Professor (c)",
         email: "madhumitachanda.it@jntugvcev.edu.in",
-        image: "/faculty/madhumita.png"
+        image: "/faculty/madhumitha.jpeg"
     },
     {
         name: "Mrs. Bobbadi Manasa",
@@ -86,7 +86,7 @@ const supportingStaff = [
 
 export default function Faculty() {
     return (
-        <section id="faculty" className="py-24 relative overflow-hidden bg-[#030712]">
+        <section id="faculty" className="py-24 relative overflow-hidden bg-[#020617]">
             {/* Decorative Grid BG */}
             <div className="absolute inset-0 bg-[linear-gradient(rgba(124,58,237,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(124,58,237,0.05)_1px,transparent_1px)] bg-[size:50px_50px]" />
 
@@ -149,27 +149,20 @@ export default function Faculty() {
                     </h2>
                 </div>
 
-                <div className="relative w-full overflow-hidden pb-12">
-                    {/* Infinite Scroll Container */}
-                    <motion.div
-                        className="flex gap-4 md:gap-6 w-max"
-                        animate={{
-                            x: ["0%", "-33.33%"],
-                        }}
-                        transition={{
-                            duration: 20,
-                            repeat: Infinity,
-                            ease: "linear"
-                        }}
-                    >
-                        {/* 3 identical sets of staff to create a seamless infinite loop */}
-                        {[...supportingStaff, ...supportingStaff, ...supportingStaff].map((staff, index) => (
-                            <div key={index} className="w-48 md:w-56 shrink-0">
-                                <FacultyCard member={staff} isStaff />
-                            </div>
-                        ))}
-                    </motion.div>
-
+                {/* Static Grid for Supporting Staff */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto px-4 pb-12">
+                    {supportingStaff.map((staff, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            className="w-full"
+                        >
+                            <FacultyCard member={staff} isStaff />
+                        </motion.div>
+                    ))}
                 </div>
             </div>
         </section>

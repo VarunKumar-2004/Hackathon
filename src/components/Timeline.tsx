@@ -6,7 +6,7 @@ import { Calendar, CheckCircle2, Clock, MapPin, Star } from 'lucide-react';
 const events = [
     {
         date: "NOW",
-        title: "Registration Open",
+        title: "Registrations Open",
         description: "Join the elite developers. Secure your spot in the PyTech Arena buildathon.",
         icon: <Star className="w-5 h-5" />,
         color: "text-emerald-400",
@@ -15,7 +15,7 @@ const events = [
     },
     {
         date: "13 Feb 2026",
-        title: "Registration Deadline",
+        title: "Registrations Deadline",
         description: "Last call for entries. Registration portal will close at midnight strictly.",
         icon: <Clock className="w-5 h-5" />,
         color: "text-orange-400",
@@ -41,7 +41,7 @@ const events = [
         bgColor: "bg-purple-500/10"
     },
     {
-        date: "17 - 21 Feb 2026",
+        date: "19 - 21 Feb 2026",
         title: "Intermediate Phase Evaluation",
         description: "Technical review and deep dive into intermediate track submissions.",
         icon: <Calendar className="w-5 h-5" />,
@@ -50,8 +50,8 @@ const events = [
         bgColor: "bg-cyan-500/10"
     },
     {
-        date: "21 - 22 Feb 2026",
-        title: "Intermediate Results",
+        date: "22 Feb 2026",
+        title: "Intermediate Phase Results",
         description: "Finalists for the offline hackathon will be announced.",
         icon: <Star className="w-5 h-5" />,
         color: "text-indigo-400",
@@ -121,10 +121,10 @@ export default function Timeline() {
                                             {event.date}
                                             <span className="opacity-70">&gt;</span>
                                         </div>
-                                        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-400 transition-all">
+                                        <h3 className="md:text-xl text-lg font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-400 transition-all">
                                             {event.title}
                                         </h3>
-                                        <p className="text-gray-400 text-sm leading-relaxed">
+                                        <p className="text-gray-400 lg:text-sm text-xs leading-relaxed">
                                             {event.description}
                                         </p>
                                     </div>

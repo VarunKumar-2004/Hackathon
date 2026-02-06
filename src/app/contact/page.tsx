@@ -25,7 +25,7 @@ const contacts = [
     {
         name: "Mr. S.Ramayya",
         phone: "+91 8919496691",
-        image: "/coordinators/ramayya.png",
+        image: "/coordinators/ramayya.jpeg",
         socials: {
             linkedin: "https://linkedin.com/in/ramakrishna",
             instagram: "https://instagram.com/ramakrishna"
@@ -41,7 +41,7 @@ const contacts = [
     },
     {
         name: "Mrs. M.Charitha",
-        image: "/coordinators/charitha.png"
+        image: "/coordinators/charitha.jpeg"
     }
 ];
 

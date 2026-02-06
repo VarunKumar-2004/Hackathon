@@ -28,7 +28,7 @@ export default function Preloader() {
                 <motion.div
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden bg-black font-serif"
+                    className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden bg-[#020617] font-serif"
                 >
                     {/* Left Red Curtain */}
                     <motion.div
@@ -112,7 +112,7 @@ export default function Preloader() {
                                     </motion.div>
 
                                     <h1 className="text-4xl md:text-6xl lg:text-8xl font-black text-white mb-12 tracking-tight drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)] italic">
-                                        PyTech <span className="text-yellow-500">Arena</span>
+                                        PyTech <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-500">Arena</span>
                                     </h1>
 
                                     <button

@@ -63,7 +63,7 @@ export default function About() {
                                     <div className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse" />
                                     Our Vision
                                 </h4>
-                                <p className="text-gray-500 text-xs md:text-sm italic leading-snug">
+                                <p className="text-gray-400 text-xs md:text-sm italic leading-snug">
                                     "To create a hub of innovation where code meets reality and solves societal problems."
                                 </p>
                             </div>
@@ -72,7 +72,7 @@ export default function About() {
                                     <div className="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse" />
                                     Commitment
                                 </h4>
-                                <p className="text-gray-500 text-xs md:text-sm italic leading-snug">
+                                <p className="text-gray-400 text-xs md:text-sm italic leading-snug">
                                     Providing a high-octane environment with mentorship and industry exposure for 48 hours.
                                 </p>
                             </div>
@@ -96,7 +96,7 @@ export default function About() {
                                     </div>
                                 </div>
                                 <h3 className="text-white font-bold text-base md:text-lg mb-2">{feature.title}</h3>
-                                <p className="text-gray-500 text-xs md:text-sm leading-relaxed">
+                                <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
                                     {feature.description}
                                 </p>
                             </motion.div>
