@@ -5,6 +5,7 @@ import "./globals.css";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Preloader from "@/components/Preloader";
 
 const inter = Inter({ subsets: ["latin"] });
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
@@ -23,6 +24,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${inter.className} ${outfit.variable} ${spaceGrotesk.variable} min-h-screen bg-[#020617] text-white selection:bg-purple-500/30`}>
+                <Preloader />
                 <Navbar />
                 {children}
                 <Footer />

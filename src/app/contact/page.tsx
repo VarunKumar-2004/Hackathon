@@ -7,7 +7,7 @@ const contacts = [
     {
         name: "Mr. P.Rama Krishna",
         phone: "+91 6303843315",
-        image: "/contacts/ramakrishna.png",
+        image: "/coordinators/ramakrishna.jpeg",
         socials: {
             linkedin: "https://linkedin.com/in/ramakrishna",
             instagram: "https://instagram.com/ramakrishna"
@@ -16,7 +16,7 @@ const contacts = [
     {
         name: "Mr. J.Vinay",
         phone: "+91 9701458518",
-        image: "/contacts/vinay.png",
+        image: "/coordinators/vinay.jpeg",
         socials: {
             linkedin: "https://linkedin.com/in/ramakrishna",
             instagram: "https://instagram.com/ramakrishna"
@@ -25,7 +25,7 @@ const contacts = [
     {
         name: "Mr. S.Ramayya",
         phone: "+91 8919496691",
-        image: "/contacts/ramayya.png",
+        image: "/coordinators/ramayya.png",
         socials: {
             linkedin: "https://linkedin.com/in/ramakrishna",
             instagram: "https://instagram.com/ramakrishna"
@@ -33,15 +33,15 @@ const contacts = [
     },
     {
         name: "Mrs. V.Varshitha",
-        image: "/contacts/varshitha.png",
+        image: "/coordinators/varshitha.jpeg",
     },
     {
         name: "Mrs. K.Sandhya",
-        image: "/contacts/sandhya.png"
+        image: "/coordinators/sandhya.jpeg"
     },
     {
         name: "Mrs. M.Charitha",
-        image: "/contacts/charitha.png"
+        image: "/coordinators/charitha.png"
     }
 ];
 
@@ -73,7 +73,7 @@ export default function ContactPage() {
                 </header>
 
                 {/* Contact Cards Grid - Square version */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-5xl mx-auto">
                     {contacts.map((contact, index) => (
                         <motion.div
                             key={index}
@@ -81,18 +81,18 @@ export default function ContactPage() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="group relative aspect-square"
+                            className="group relative h-[400px]"
                         >
                             {/* Card Background Glow */}
                             <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500" />
 
                             <div className="relative h-full bg-gray-900/40 border border-white/5 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl flex flex-col group-hover:border-purple-500/50 transition-all duration-300">
-                                {/* Image Section (Top) - Half of square */}
-                                <div className="h-1/2 relative overflow-hidden">
+                                {/* Image Section (Top) */}
+                                <div className="h-[65%] relative overflow-hidden">
                                     <img
                                         src={contact.image}
                                         alt={contact.name}
-                                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                                        className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700"
                                         onError={(e) => {
                                             const target = e.target as HTMLImageElement;
                                             target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(contact.name)}&background=111827&color=a855f7&bold=true&size=256`;

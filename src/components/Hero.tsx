@@ -27,43 +27,59 @@ export default function Hero() {
     return (
         <section id="home" className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden bg-[#02040a]">
             {/* Logos at the top ends */}
-            <div className="absolute top-24 md:top-8 md:-left-14 md:-right-14 left-0 right-0 px-[var(--page-margin)] flex justify-between items-start pointer-events-none z-[60]">
+            <div className="absolute top-24 md:top-8 md:-left-24 md:-right-24 left-0 right-2 px-[var(--page-margin)] flex justify-between items-center pointer-events-auto z-[60]">
                 <motion.div
                     initial={{ x: -100, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.5 }}
-                    className="flex flex-col items-center gap-2 pointer-events-auto"
+                    className="flex items-center gap-3 md:gap-6 pointer-events-auto"
                 >
                     <a
                         href="https://jntugvcev.edu.in/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="relative z-10 block p-3 transition-transform hover:scale-110 active:scale-95 cursor-pointer"
+                        className="relative z-10 block transition-transform hover:scale-110 active:scale-95 cursor-pointer"
                     >
                         <img
                             src="/partners/jntugv.png"
                             alt="JNTUGV Logo"
-                            className="w-13 h-auto md:w-16 lg:w-22 filter drop-shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all duration-500"
+                            className="w-10 h-auto md:w-14 lg:w-20 filter drop-shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all duration-500"
                         />
                     </a>
+                    <div className="w-[1px] h-8 md:h-12 bg-white/10" />
+                    <div className="relative z-10 block transition-transform hover:scale-110 active:scale-95">
+                        <img
+                            src="/partners/IIC.png"
+                            alt="IIC Logo"
+                            className="w-10 h-auto md:w-14 lg:w-20 filter drop-shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all duration-500"
+                        />
+                    </div>
                 </motion.div>
 
                 <motion.div
                     initial={{ x: 100, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.5 }}
-                    className="flex flex-col items-center gap-2 pointer-events-auto"
+                    className="flex items-center justify-center gap-3 md:gap-6 pointer-events-auto"
                 >
+                    <div className="relative z-10 block transition-transform hover:scale-110 active:scale-95">
+                        <img
+                            src="/partners/aicte.png"
+                            alt="AICTE Logo"
+                            className="w-10 h-auto md:w-14 lg:w-20 filter drop-shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all duration-500"
+                        />
+                    </div>
+                    <div className="w-[1px] h-8 md:h-12 bg-white/10" />
                     <a
                         href="https://jntukucev.hosting2.acm.org/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="relative z-10 block p-3 transition-transform hover:scale-110 active:scale-95 cursor-pointer"
+                        className="relative z-10 block transition-transform hover:scale-110 active:scale-95 cursor-pointer"
                     >
                         <img
                             src="/partners/acm.png"
                             alt="ACM Logo"
-                            className="w-13 h-auto md:w-16 lg:w-22 filter drop-shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all duration-500 brightness-125"
+                            className="w-10 h-auto md:w-12 lg:w-18 filter drop-shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all duration-500 brightness-125"
                         />
                     </a>
                 </motion.div>
