@@ -12,8 +12,8 @@ const tracks = [
         goal: "Build confidence + logical thinking",
         time: "Virtual Mode",
         skills: ["Variables, loops, conditionals", "Functions", "Lists, dictionaries", "File handling"],
-        perks: ["E-Certificates for participants", "Top 10 Merit Certificates"],
-        nextStep: "Qualify for Level 2 (Intermediate)",
+        perks: ["E-Certificates for participants"],
+        nextStep: "Qualification Base for Level 2 (Intermediate)",
         price: "₹50",
         color: "from-emerald-400 to-green-600",
         border: "border-emerald-500/30",
@@ -28,8 +28,8 @@ const tracks = [
         goal: "Real-world problem solving",
         time: "Virtual Mode",
         skills: ["OOP in Python", "Pandas, NumPy", "Exception handling", "Modular coding"],
-        perks: ["E-Certificates for participants", "Top 10 Merit Certificates"],
-        nextStep: "Qualify for Level 3 (Advanced)",
+        perks: ["E-Certificates for participants"],
+        nextStep: "Qualification Base for Level 3 (Advanced)",
         price: "₹100",
         color: "from-blue-400 to-indigo-600",
         border: "border-blue-500/30",
@@ -50,7 +50,7 @@ const tracks = [
             "🥈 2nd Prize: ₹15,000",
             "🥉 3rd Prize: ₹7,000"
         ],
-        nextStep: "Grand Finale Winner",
+        partPerks: ["Merit Certificates for Top 10", "E-Certificates for participants",],
         price: "₹250",
         color: "from-purple-400 to-pink-600",
         border: "border-purple-500/30",
@@ -138,10 +138,12 @@ export default function Tracks() {
                                         <Trophy className="w-4 h-4 mr-3 text-yellow-500 shrink-0" />
                                         <span className="text-xs md:text-sm">{track.goal}</span>
                                     </div>
-                                    <div className="flex items-center text-gray-400">
-                                        <Award className="w-4 h-4 mr-3 text-cyan-500 shrink-0" />
-                                        <span className="text-emerald-400 font-bold text-[10px] md:text-xs">{track.nextStep}</span>
-                                    </div>
+                                    {!track.isAdvanced && track.nextStep && (
+                                        <div className="flex items-center text-gray-400">
+                                            <Award className="w-4 h-4 mr-3 text-cyan-500 shrink-0" />
+                                            <span className="text-emerald-400 font-bold text-[10px] md:text-xs">{track.nextStep}</span>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
 
@@ -166,6 +168,24 @@ export default function Tracks() {
                                     ))}
                                 </div>
                             </div>
+
+                            {/* Participation Rewards - Only for Advanced */}
+                            {track.isAdvanced && track.partPerks && (
+                                <div className="px-6 md:px-8 py-4 md:py-5 border-t border-white/5 bg-white/[0.02]">
+                                    <h4 className="text-[9px] md:text-[10px] font-bold text-gray-300 uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
+                                        <Award className="w-3 h-3 text-cyan-500" />
+                                        Participation Rewards
+                                    </h4>
+                                    <div className="space-y-2">
+                                        {track.partPerks.map((perk, i) => (
+                                            <div key={i} className="flex items-center gap-2 text-[10px] md:text-xs">
+                                                <div className={`w-1 h-1 rounded-full bg-gradient-to-r ${track.color}`} />
+                                                <span className="text-gray-400">{perk}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
 
                             {/* Skills Area */}
                             <div className="px-6 md:px-8 py-5 md:py-6 border-t border-white/5 bg-black/20 flex-grow">
