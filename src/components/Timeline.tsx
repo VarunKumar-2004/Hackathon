@@ -16,14 +16,14 @@ const events = [
     {
         date: "13 Feb 2026",
         title: "Registrations Deadline",
-        description: "Last call for entries. Registration portal will close at midnight strictly.",
+        description: "Last call for entries. Registration portal will close at 6:00 PM strictly.",
         icon: <Clock className="w-5 h-5" />,
         color: "text-orange-400",
         borderColor: "border-orange-500/50",
         bgColor: "bg-orange-500/10"
     },
     {
-        date: "13 - 17 Feb 2026",
+        date: "14 - 17 Feb 2026",
         title: "Beginner Phase Evaluation",
         description: "Mentors and judges review projects submitted by beginner tracks.",
         icon: <Calendar className="w-5 h-5" />,
