@@ -149,8 +149,31 @@ export default function Faculty() {
                     </h2>
                 </div>
 
-                {/* Static Grid for Supporting Staff */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto px-4 pb-12">
+                {/* Mobile: Infinite Scroll | Desktop: Static Grid */}
+                {/* Mobile Infinite Scroll */}
+                <div className="md:hidden relative w-full overflow-hidden pb-12">
+                    <motion.div
+                        className="flex gap-4 w-max"
+                        animate={{
+                            x: ["0%", "-50%"],
+                        }}
+                        transition={{
+                            duration: 20,
+                            repeat: Infinity,
+                            ease: "linear"
+                        }}
+                    >
+                        {/* 2 identical sets for seamless loop */}
+                        {[...supportingStaff, ...supportingStaff].map((staff, index) => (
+                            <div key={index} className="w-40 shrink-0">
+                                <FacultyCard member={staff} isStaff />
+                            </div>
+                        ))}
+                    </motion.div>
+                </div>
+
+                {/* Desktop Static Grid */}
+                <div className="hidden md:grid grid-cols-4 gap-6 max-w-5xl mx-auto px-4 pb-12">
                     {supportingStaff.map((staff, index) => (
                         <motion.div
                             key={index}

@@ -32,15 +32,15 @@ const contacts = [
         }
     },
     {
-        name: "Mrs. V.Varshitha",
+        name: "Ms. V.Varshitha",
         image: "/coordinators/varshitha.jpeg",
     },
     {
-        name: "Mrs. K.Sandhya",
+        name: "Ms. K.Sandhya",
         image: "/coordinators/sandhya.jpeg"
     },
     {
-        name: "Mrs. M.Charitha",
+        name: "Ms. M.Charitha",
         image: "/coordinators/charitha.jpeg"
     }
 ];
