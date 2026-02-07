@@ -45,6 +45,54 @@ const contacts = [
     }
 ];
 
+function EmailButtons() {
+    const [copied, setCopied] = React.useState(false);
+    const email = "penugantiramakrishna5@gmail.com";
+
+    const handleCopy = async () => {
+        try {
+            await navigator.clipboard.writeText(email);
+            setCopied(true);
+            setTimeout(() => setCopied(false), 2000);
+        } catch (err) {
+            console.error('Failed to copy:', err);
+        }
+    };
+
+    return (
+        <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
+            <a
+                href={`mailto:${email}`}
+                className="inline-flex items-center gap-2 px-10 py-5 bg-white text-black font-black rounded-2xl hover:scale-110 active:scale-95 transition-all shadow-2xl"
+            >
+                <Mail size={20} />
+                Send Email
+            </a>
+
+            <button
+                onClick={handleCopy}
+                className="inline-flex items-center gap-2 px-10 py-5 bg-purple-600 text-white font-black rounded-2xl hover:scale-110 active:scale-95 transition-all shadow-2xl hover:bg-purple-500"
+            >
+                {copied ? (
+                    <>
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        Copied!
+                    </>
+                ) : (
+                    <>
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                        </svg>
+                        Copy Email
+                    </>
+                )}
+            </button>
+        </div>
+    );
+}
+
 export default function ContactPage() {
     return (
         <main className="min-h-screen bg-[#020617] text-white pt-32 pb-20 overflow-hidden">
@@ -167,16 +215,12 @@ export default function ContactPage() {
                     className="mt-24 text-center p-12 bg-gradient-to-b from-white/5 to-transparent border border-white/5 rounded-[3rem]"
                 >
                     <div className="inline-flex p-4 bg-purple-600/20 rounded-2xl text-purple-400 mb-8 scale-125 shadow-glow">
-                        <MessageSquare size={32} />
+                        <MessageSquare size={28} />
                     </div>
                     <h2 className="text-3xl font-black text-white mb-4">Still have questions?</h2>
                     <p className="text-gray-400 mb-8 font-mono text-sm">Send us a general inquiry and we'll get back to you within 24 hours.</p>
-                    <a
-                        href="mailto:support@pytecharena.in"
-                        className="inline-flex items-center gap-2 px-10 py-5 bg-white text-black font-black rounded-2xl hover:scale-110 active:scale-95 transition-all shadow-2xl"
-                    >
-                        Official Support Email
-                    </a>
+
+                    <EmailButtons />
                 </motion.div>
             </div>
         </main>

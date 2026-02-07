@@ -37,7 +37,7 @@ export default function Footer() {
                         <ul className="space-y-3 md:space-y-4 text-gray-500 text-xs md:text-sm">
                             <li className="flex items-start">
                                 <Mail className="w-4 h-4 md:w-5 md:h-5 mr-3 text-cyan-500 mt-0.5" />
-                                <span className="hover:text-white transition-colors cursor-pointer break-all">support@pytecharena.in</span>
+                                <span className="hover:text-white transition-colors cursor-pointer break-all">juttukavinay83@gmail.com</span>
                             </li>
                             <li className="flex items-start">
                                 <MapPin className="w-4 h-4 md:w-5 md:h-5 mr-3 text-cyan-500 mt-0.5" />
