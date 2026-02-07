@@ -48,9 +48,9 @@ const facultyMembers = [
     },
     {
         name: "Mrs. M. Geetha Madhuri",
-        role: "Assistant Professor",
+        role: "Assistant Professor(c)",
         email: "mgmadhuri.cse@jntugvcev.edu.in",
-        image: "/faculty/geetha_madhuri.png"
+        image: "/faculty/geetha_madhuri.jpeg"
     }
 ];
 
