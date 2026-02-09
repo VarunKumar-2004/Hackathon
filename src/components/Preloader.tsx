@@ -1,171 +1,85 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Gift, Sparkles } from "lucide-react";
 
 export default function Preloader() {
-    const [isOpened, setIsOpened] = useState(false);
-    const [isOpen, setIsOpen] = useState(false);
-    const [isVisible, setIsVisible] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
 
-    const handleOpen = () => {
-        setIsOpened(true);
-        // Step 1: Ribbon unties after a tiny delay
-        setTimeout(() => {
-            // Step 2: Curtains open after ribbon is "unwrapped"
-            setIsOpen(true);
-        }, 1000);
-
-        // Step 3: Remove from DOM after all animations
-        setTimeout(() => {
-            setIsVisible(false);
+    useEffect(() => {
+        // Simulate loading time (e.g., 2.5 seconds)
+        const timer = setTimeout(() => {
+            setIsLoading(false);
         }, 2500);
-    };
+
+        return () => clearTimeout(timer);
+    }, []);
 
     return (
         <AnimatePresence>
-            {isVisible && (
+            {isLoading && (
                 <motion.div
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden bg-[#020617] font-serif"
+                    initial={{ opacity: 1 }}
+                    exit={{ opacity: 0, transition: { duration: 0.8, ease: "easeInOut" } }}
+                    className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#020617] text-white overflow-hidden font-sans"
                 >
-                    {/* Left Red Curtain */}
-                    <motion.div
-                        animate={{ x: isOpen ? "-100%" : 0 }}
-                        transition={{ duration: 1.5, ease: [0.77, 0, 0.175, 1] }}
-                        className="absolute left-0 top-0 w-1/2 h-full z-20 shadow-[20px_0_50px_rgba(0,0,0,0.7)]"
-                        style={{
-                            background: "linear-gradient(90deg, #450a0a 0%, #991b1b 15%, #7f1d1d 30%, #b91c1c 50%, #7f1d1d 70%, #991b1b 85%, #450a0a 100%)",
-                            backgroundSize: "40% 100%"
-                        }}
-                    >
-                        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/pinstriped-suit.png')] opacity-10 pointer-events-none" />
-                        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40 pointer-events-none" />
-                    </motion.div>
+                    {/* Background Grid Effect */}
+                    <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_at_center,black_50%,transparent_100%)] pointer-events-none" />
 
-                    {/* Right Red Curtain */}
-                    <motion.div
-                        animate={{ x: isOpen ? "100%" : 0 }}
-                        transition={{ duration: 1.5, ease: [0.77, 0, 0.175, 1] }}
-                        className="absolute right-0 top-0 w-1/2 h-full z-20 shadow-[-20px_0_50px_rgba(0,0,0,0.7)]"
-                        style={{
-                            background: "linear-gradient(90deg, #450a0a 0%, #991b1b 15%, #7f1d1d 30%, #b91c1c 50%, #7f1d1d 70%, #991b1b 85%, #450a0a 100%)",
-                            backgroundSize: "40% 100%"
-                        }}
-                    >
-                        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/pinstriped-suit.png')] opacity-10 pointer-events-none" />
-                        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40 pointer-events-none" />
-                    </motion.div>
+                    {/* Content Container */}
+                    <div className="relative z-10 flex flex-col items-center gap-8">
+                        {/* Logo / Title */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1, ease: "easeOut" }}
+                            className="text-center"
+                        >
+                            <h1 className="text-5xl md:text-7xl font-black tracking-tighter italic">
+                                <span className="text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">
+                                    PyTech
+                                </span>
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 ml-4 drop-shadow-[0_0_25px_rgba(6,182,212,0.5)]">
+                                    Arena
+                                </span>
+                            </h1>
+                        </motion.div>
 
-                    {/* Ribbon - Horizontal */}
-                    <AnimatePresence>
-                        {!isOpened && (
+                        {/* Loading Spinner */}
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: 0.5, duration: 0.5 }}
+                            className="relative w-24 h-24 flex items-center justify-center"
+                        >
+                            {/* Rotating Outer Ring */}
                             <motion.div
-                                exit={{ scaleY: 0, opacity: 0, transition: { duration: 0.5 } }}
-                                className="absolute inset-x-0 h-16 md:h-20 bg-gradient-to-b from-yellow-300 via-yellow-500 to-yellow-600 z-30 flex items-center justify-center shadow-[0_0_30px_rgba(0,0,0,0.5)]"
-                            >
-                                <div className="absolute top-0 inset-x-0 h-1 bg-white/20" />
-                                <div className="absolute bottom-0 inset-x-0 h-1 bg-black/20" />
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
-
-                    {/* Ribbon Pieces (Animated opening) */}
-                    {isOpened && (
-                        <>
-                            <motion.div
-                                initial={{ x: 0, scaleY: 1 }}
-                                animate={{ x: "-100%", scaleY: 0, rotate: -15, opacity: 0 }}
-                                transition={{ duration: 1, ease: "easeInOut" }}
-                                className="absolute left-0 w-1/2 h-16 md:h-20 bg-gradient-to-b from-yellow-300 via-yellow-500 to-yellow-600 z-30 pointer-events-none"
+                                animate={{ rotate: 360 }}
+                                transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                                className="absolute inset-0 rounded-full border-t-2 border-r-2 border-cyan-500/50"
                             />
+                            {/* Rotating Inner Ring (Reverse) */}
                             <motion.div
-                                initial={{ x: 0, scaleY: 1 }}
-                                animate={{ x: "100%", scaleY: 0, rotate: 15, opacity: 0 }}
-                                transition={{ duration: 1, ease: "easeInOut" }}
-                                className="absolute right-0 w-1/2 h-16 md:h-20 bg-gradient-to-b from-yellow-300 via-yellow-500 to-yellow-600 z-30 pointer-events-none"
+                                animate={{ rotate: -360 }}
+                                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                                className="absolute inset-4 rounded-full border-b-2 border-l-2 border-purple-500/50"
                             />
-                        </>
-                    )}
+                            {/* Pulsing Core */}
+                            <motion.div
+                                animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
+                                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                                className="w-4 h-4 rounded-full bg-white shadow-[0_0_15px_white]"
+                            />
+                        </motion.div>
 
-                    {/* Main Interaction Area */}
-                    <div className="relative z-40 text-center flex flex-col items-center gap-10">
-                        <AnimatePresence>
-                            {!isOpened && (
-                                <motion.div
-                                    initial={{ opacity: 0, y: 30 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, scale: 1.1, filter: "blur(15px)" }}
-                                    className="flex flex-col items-center"
-                                >
-                                    <motion.div
-                                        animate={{ y: [0, -15, 0] }}
-                                        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                                        className="mb-8"
-                                    >
-                                        <img
-                                            src="/partners/jntugv.png"
-                                            alt="JNTUGV"
-                                            className="w-24 h-24 md:w-36 md:h-36 object-contain drop-shadow-[0_0_30px_rgba(234,179,8,0.3)]"
-                                        />
-                                    </motion.div>
-
-                                    <h1 className="text-4xl md:text-6xl lg:text-8xl font-black text-white mb-12 tracking-tight drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)] italic">
-                                        PyTech <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-500 to-purple-600">Arena</span>
-                                    </h1>
-
-                                    <button
-                                        onClick={handleOpen}
-                                        className="group relative transition-all active:scale-90"
-                                    >
-                                        {/* Gift Box Style Button */}
-                                        <div className="relative bg-red-600 p-8 md:p-12 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5),inset_0_0_20px_rgba(255,255,255,0.2)] border-4 border-yellow-500/50 group-hover:border-yellow-400 group-hover:bg-red-500 transition-all overflow-hidden">
-                                            {/* Ribbon Cross on Button */}
-                                            <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-4 md:w-6 bg-yellow-500 shadow-lg" />
-                                            <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-4 md:h-6 bg-yellow-500 shadow-lg" />
-
-                                            <div className="relative z-10 flex flex-col items-center gap-4">
-                                                <span className="text-white font-black text-3xl md:text-5xl uppercase tracking-[0.3em] italic drop-shadow-md">
-                                                    Open
-                                                </span>
-                                            </div>
-
-                                            {/* Sparkles around button */}
-                                            <motion.div
-                                                animate={{ opacity: [0, 1, 0] }}
-                                                transition={{ duration: 1.5, repeat: Infinity }}
-                                                className="absolute top-2 right-2 text-yellow-300"
-                                            >
-                                                <Sparkles size={24} />
-                                            </motion.div>
-                                        </div>
-                                    </button>
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
-
-                        {/* Grand Entrance Welcome */}
-                        <AnimatePresence>
-                            {isOpened && !isOpen && (
-                                <motion.div
-                                    initial={{ opacity: 0, scale: 0.8 }}
-                                    animate={{ opacity: 1, scale: 1.1 }}
-                                    exit={{ opacity: 0 }}
-                                    className="absolute inset-0 flex items-center justify-center -mt-20"
-                                >
-                                    <h2 className="text-6xl md:text-9xl font-black text-yellow-400 italic tracking-tighter uppercase drop-shadow-[0_0_50px_rgba(234,179,8,0.5)]">
-                                        Welcome
-                                    </h2>
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
-                    </div>
-
-                    {/* Spotlight & Atmospheric Lighting */}
-                    <div className="absolute inset-0 z-10 pointer-events-none">
-                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-full bg-gradient-to-b from-white/10 to-transparent blur-[120px] opacity-40" />
-                        <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/60 to-transparent" />
+                        {/* Loading Text */}
+                        <motion.p
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 1, duration: 1 }}
+                            className="text-cyan-200/60 font-mono text-sm uppercase tracking-[0.3em] animate-pulse"
+                        >
+                            Initializing System...
+                        </motion.p>
                     </div>
                 </motion.div>
             )}
