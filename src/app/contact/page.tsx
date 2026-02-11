@@ -9,8 +9,8 @@ const contacts = [
         phone: "+91 6303843315",
         image: "/coordinators/ramakrishna.jpeg",
         socials: {
-            linkedin: "https://linkedin.com/in/ramakrishna",
-            instagram: "https://instagram.com/ramakrishna"
+            linkedin: "https://www.linkedin.com/in/penuganti-ramakrishna-21aa47278?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+            instagram: "https://www.instagram.com/p.rama_krishna_49?igsh=NmJlcXdpMmVjZmps"
         }
     },
     {
@@ -18,8 +18,8 @@ const contacts = [
         phone: "+91 9701458518",
         image: "/coordinators/vinay.jpeg",
         socials: {
-            linkedin: "https://linkedin.com/in/ramakrishna",
-            instagram: "https://instagram.com/ramakrishna"
+            linkedin: "https://www.linkedin.com/in/juttukavinay?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+            instagram: "https://www.instagram.com/vinay_.rider?igsh=MTQxdjJ2aWlrNTc4"
         }
     },
     {
@@ -27,7 +27,7 @@ const contacts = [
         phone: "+91 8919496691",
         image: "/coordinators/ramayya.jpeg",
         socials: {
-            linkedin: "https://linkedin.com/in/ramakrishna",
+            linkedin: "https://www.linkedin.com/in/sakalokajanakiramayya?utm_source=share_via&utm_content=profile&utm_medium=member_android",
             instagram: "https://instagram.com/ramakrishna"
         }
     },

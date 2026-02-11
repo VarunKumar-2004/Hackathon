@@ -139,7 +139,7 @@ export default function BeginnerRegistration() {
                             </div>
 
                             <a
-                                href="https://docs.google.com/forms/d/e/1FAIpQLSeT7DKUjlryiGvv0YKPtnDSWMrQH8QjTnH0E8PWG5NAlAFUuw/viewform"
+                                href="https://forms.gle/rCRqUhB8HD4tGWSA6"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="block w-full py-4 bg-purple-600 hover:bg-purple-700 text-white rounded-xl font-bold transition-all shadow-lg shadow-purple-900/40"

@@ -49,7 +49,7 @@ export default function Footer() {
                     <div>
                         <h3 className="text-white font-bold mb-4 md:mb-6 font-mono text-xs md:text-sm uppercase tracking-wider">Social Feed</h3>
                         <div className="flex space-x-3 md:space-x-4">
-                            <SocialIcon icon={<Instagram className="w-4 h-4 md:w-5 md:h-5" />} />
+                            <SocialIcon href="https://www.instagram.com/pytech_arena_hackathon?utm_source=qr&igsh=MWszbW1xNjlqcGNidg==" icon={<Instagram className="w-4 h-4 md:w-5 md:h-5" />} />
                             <SocialIcon icon={<Twitter className="w-4 h-4 md:w-5 md:h-5" />} />
                             <SocialIcon icon={<Linkedin className="w-4 h-4 md:w-5 md:h-5" />} />
                         </div>
@@ -68,9 +68,9 @@ export default function Footer() {
     );
 }
 
-function SocialIcon({ icon }: { icon: React.ReactNode }) {
+function SocialIcon({ icon, href = "#" }: { icon: React.ReactNode, href?: string }) {
     return (
-        <a href="#" className="w-10 h-10 rounded-lg bg-white/5 border border-white/5 flex items-center justify-center text-gray-400 hover:bg-white/10 hover:text-white hover:border-white/20 transition-all transform hover:-translate-y-1">
+        <a href={href} className="w-10 h-10 rounded-lg bg-white/5 border border-white/5 flex items-center justify-center text-gray-400 hover:bg-white/10 hover:text-white hover:border-white/20 transition-all transform hover:-translate-y-1">
             {icon}
         </a>
     )
