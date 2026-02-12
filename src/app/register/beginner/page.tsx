@@ -105,7 +105,7 @@ export default function BeginnerRegistration() {
                         >
                             <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wider">Track Details</h3>
                             <div className="space-y-6">
-                                <DetailItem icon={<Calendar />} label="Date" value="14th Feb to 17th Feb 2026" />
+                                <DetailItem icon={<Calendar />} label="Date" value="16th Feb to 17th Feb 2026" />
                                 <DetailItem icon={<Clock />} label="Time" value="9 AM to 4 PM" />
                                 <DetailItem icon={<CircleDollarSign />} label="Registration Fee" value="₹50 / Member" />
                             </div>
