@@ -19,7 +19,8 @@ const tracks = [
         border: "border-emerald-500/30",
         icon: <Code2 className="w-6 h-6" />,
         mode: "virtual",
-        registrationUrl: "/register/beginner"
+        registrationUrl: "/register/beginner",
+        isLocked: true
     },
     {
         level: "Level 2",
@@ -35,8 +36,8 @@ const tracks = [
         border: "border-blue-500/30",
         icon: <Layers className="w-6 h-6" />,
         mode: "virtual",
-        registrationUrl: "#",
-        isLocked: true
+        registrationUrl: "/register/intermediate",
+        isLocked: false
     },
     {
         level: "Level 3",
