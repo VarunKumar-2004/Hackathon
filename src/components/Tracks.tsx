@@ -20,7 +20,8 @@ const tracks = [
         icon: <Code2 className="w-6 h-6" />,
         mode: "virtual",
         registrationUrl: "/register/beginner",
-        isLocked: true
+        isLocked: true,
+        isCompleted: true
     },
     {
         level: "Level 2",
@@ -37,7 +38,8 @@ const tracks = [
         icon: <Layers className="w-6 h-6" />,
         mode: "virtual",
         registrationUrl: "/register/intermediate",
-        isLocked: false
+        isLocked: true,
+        isCompleted: true
     },
     {
         level: "Level 3",
@@ -59,7 +61,12 @@ const tracks = [
         mode: "offline",
         isAdvanced: true,
         registrationUrl: "#",
-        isLocked: true
+        isLocked: true,
+        downloadUrl: "/problems/problemStatments.pdf",
+        problemStatements: [
+            "Implementation of Parallel Matrix Multiplication",
+            "Real-time Distributed Log Processing System"
+        ]
     }
 ];
 
@@ -145,6 +152,19 @@ export default function Tracks() {
                                             <span className="text-emerald-400 font-bold text-[10px] md:text-xs">{track.nextStep}</span>
                                         </div>
                                     )}
+                                    {track.isAdvanced && (track as any).problemStatements && (
+                                        <div className="space-y-2 mt-4">
+                                            <p className="text-[10px] font-bold text-gray-300 uppercase tracking-widest">Problem Statements</p>
+                                            <div className="space-y-1">
+                                                {(track as any).problemStatements.map((prob: string, idx: number) => (
+                                                    <div key={idx} className="flex items-start gap-2 text-[10px] text-gray-400 italic">
+                                                        <div className="w-1 h-1 rounded-full bg-purple-500 mt-1.5 shrink-0" />
+                                                        <span>{prob}</span>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
 
@@ -212,10 +232,15 @@ export default function Tracks() {
                                             <span className="text-[9px] text-white/60 uppercase font-bold tracking-wider">/ Member</span>
                                         </div>
                                     </div>
-                                    {track.isLocked ? (
-                                        <div className="px-5 md:px-6 py-2.5 md:py-3 rounded-xl font-bold text-[10px] md:text-xs text-gray-400 bg-white/5 border border-white/10 flex items-center justify-center gap-2 cursor-not-allowed">
+                                    {(track as any).isCompleted ? (
+                                        <div className="px-5 md:px-6 py-2.5 md:py-3 rounded-xl font-bold text-[10px] md:text-xs text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center gap-2">
+                                            <Sparkles size={12} className="md:w-3.5 md:h-3.5" />
+                                            Mission Completed
+                                        </div>
+                                    ) : track.isLocked ? (
+                                        <div className="px-5 md:px-6 py-2.5 md:py-3 rounded-xl font-bold text-[10px] md:text-xs text-red-400 bg-red-500/10 border border-red-500/20 flex items-center justify-center gap-2 cursor-not-allowed">
                                             <Lock size={12} className="md:w-3.5 md:h-3.5" />
-                                            Locked
+                                            Registrations Closed
                                         </div>
                                     ) : (
                                         <Link

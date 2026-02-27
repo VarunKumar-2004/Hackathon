@@ -14,7 +14,7 @@ export default function Navbar() {
         { name: 'Home', href: '/#home' },
         { name: 'About', href: '/#about' },
         { name: 'Tracks', href: '/#tracks' },
-        { name: 'Results', href: '/results' },
+        { name: 'Advanced', href: '/advanced' },
         { name: 'Faculty', href: '/faculty' },
         { name: 'Contact', href: '/contact' }
     ];
@@ -56,7 +56,7 @@ export default function Navbar() {
                         {!isFacultyPage && (
                             <div className="hidden md:flex items-center gap-4">
                                 <Link href="/#tracks" className="bg-white text-black px-3 md:px-4 lg:px-6 py-2 md:py-2.5 rounded-full font-semibold hover:scale-105 transition-transform text-xs  lg:text-sm shadow-[0_0_20px_rgba(255,255,255,0.3)] block">
-                                    Register Now
+                                    Register
                                 </Link>
                             </div>
                         )}
@@ -109,13 +109,14 @@ export default function Navbar() {
                             </div>
                             {!isFacultyPage && (
                                 <>
-                                    <div className="h-px bg-white/10" />
+                                    <div className=" bg-white/10" />
                                     <Link
                                         href="/#tracks"
-                                        className="bg-white text-black py-4 rounded-xl font-bold text-center hover:scale-[0.98] transition-transform shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+                                        className="bg-white text-black whitespace-nowrap px-3 md:px-4 lg:px-6 py-2 md:py-2.5 rounded-full font-semibold hover:scale-105 transition-transform text-xs lg:text-sm shadow-[0_0_20px_rgba(255,255,255,0.3)] block"
+
                                         onClick={() => setIsOpen(false)}
                                     >
-                                        Register Now
+                                        Register
                                     </Link>
                                 </>
                             )}
